@@ -16,6 +16,7 @@
     let currentIAMessage = $state("");
 
     const apiKey = import.meta.env.VITE_MISTRAL_API_KEY;
+    const POCKETBASE_URL = import.meta.env.VITE_POCKETBASE_URL || "http://127.0.0.1:8090";
 
     let messageContainer; // Référence au conteneur de messages pour le scroll
 
@@ -158,7 +159,7 @@
     async function saveIntoPocketbase(object) {
         try {
             const response = await fetch(
-                "http://127.0.0.1:8090/api/collections/messageOchat/records",
+                `${POCKETBASE_URL}/api/collections/messageOchat/records`,
                 {
                     method: "POST",
                     headers: {
@@ -182,13 +183,13 @@
     async function getData() {
         try {
             const messagesResponse = await fetch(
-                "http://127.0.0.1:8090/api/collections/messageOchat/records",
+                `${POCKETBASE_URL}/api/collections/messageOchat/records`,
             );
             const messagesData = await messagesResponse.json();
             messages = messagesData.items;
 
             const chatsResponse = await fetch(
-                "http://127.0.0.1:8090/api/collections/conversationsOchat/records",
+                `${POCKETBASE_URL}/api/collections/conversationsOchat/records`,
             );
             const chatsData = await chatsResponse.json();
             chatList = chatsData.items;
@@ -219,7 +220,7 @@
 
         try {
             const response = await fetch(
-                "http://127.0.0.1:8090/api/collections/conversationsOchat/records",
+                `${POCKETBASE_URL}/api/collections/conversationsOchat/records`,
                 {
                     method: "POST",
                     headers: {
@@ -246,7 +247,7 @@
         promptTitle = chatCible.title;
 
         const response = await fetch(
-            `http://127.0.0.1:8090/api/collections/messageOchat/records?filter=conversation_id='${chatCible.id}'`,
+            `${POCKETBASE_URL}/api/collections/messageOchat/records?filter=conversation_id='${chatCible.id}'`,
         );
         const data = await response.json();
         messages = data.items;
@@ -264,7 +265,7 @@
     async function deleteChat(chatId) {
         try {
             await fetch(
-                `http://127.0.0.1:8090/api/collections/conversationsOchat/records/${chatId}`,
+                `${POCKETBASE_URL}/api/collections/conversationsOchat/records/${chatId}`,
                 { method: "DELETE" },
             );
 
@@ -291,7 +292,7 @@
     {/if}
 
     <header class="header {showSidebar ? 'visible' : 'hidden'}">
-        <img src="../logo/logo.png" alt="logo O'chat" class="logo" />
+        <img src="/O-chat/logo/logo.png" alt="logo O'chat" class="logo" />
         <div class="header-chatSelection">
             <button class="button input-new-chat" onclick={startNewChat}
                 >Nouveau chat</button
@@ -315,7 +316,7 @@
                             aria-label="Supprimer le chat"
                         >
                             <img
-                                src="../logo/supprimer.png"
+                                src="/O-chat/logo/supprimer.png"
                                 alt=""
                                 class="icon"
                             />
@@ -373,7 +374,7 @@
                     <h2>O'chat</h2>
                     <div class="promptContent__ia-text">
                         <img
-                            src="../logo/favicon.png"
+                            src="/O-chat/logo/favicon.png"
                             alt="Chargement..."
                             class="loading-icon"
                         />
