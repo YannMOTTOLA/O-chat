@@ -1,15 +1,18 @@
 {
-  "name": "ochat",
-  "private": true,
-  "version": "0.0.0",
   "type": "module",
+  "name": "ochat",
+  "version": "0.0.0",
+  "private": true,
+  "homepage": "https://YannMOTTOLA.github.io/O-chat/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
-    "@sveltejs/vite-plugin-svelte": "^5.1.0",
+    "@sveltejs/vite-plugin-svelte": "^5.1.1",
+    "gh-pages": "^6.3.0",
     "svelte": "^5.20.2",
     "vite": "^6.2.0"
   },

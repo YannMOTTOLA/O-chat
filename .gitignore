@@ -23,3 +23,11 @@ dist-ssr
 *.sln
 *.sw?
 .env
+gh-pages/
+.vite/
+.svelte-kit/
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+.build/
+Thumbs.db
