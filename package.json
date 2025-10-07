@@ -1,0 +1,20 @@
+{
+  "name": "ochat",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^5.1.0",
+    "svelte": "^5.20.2",
+    "vite": "^6.2.0"
+  },
+  "dependencies": {
+    "mdsvex": "^0.12.6",
+    "svelte-exmarkdown": "^5.0.1"
+  }
+}

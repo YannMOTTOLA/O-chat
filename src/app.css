@@ -1,0 +1,8 @@
+/* fichier pour le CSS de base (body, balises pour lesquelles on veut toujours la même mise en forme..) */
+body {
+    background-color: #383838;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
