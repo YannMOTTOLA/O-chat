@@ -2,7 +2,7 @@
 # O-chat
 
 Ce projet est une application web développée avec **Svelte** et **Vite**.
-Elle permet d’afficher du contenu en Markdown et de générer une interface rapide et réactive, déployée sur GitHub Pages.
+Elle permet d’afficher du contenu en Markdown et de générer une interface, déployée sur GitHub Pages.
 
 ---
 
