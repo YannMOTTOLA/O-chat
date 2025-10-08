@@ -13,7 +13,7 @@ Elle permet d’afficher du contenu en Markdown et de générer une interface, d
 Clonez le dépôt et installez les dépendances :
 
 ```bash
-git clone https://github.com/YannMOTTOLA/O-chat.git
+git clone git@github.com:YannMOTTOLA/O-chat.git
 cd O-chat
 npm install
 ```
